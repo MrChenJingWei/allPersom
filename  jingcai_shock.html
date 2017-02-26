@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<script src="js/mui.min.js"></script>
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<script type="text/javascript" charset="utf-8">
+			mui.init();
+		</script>
+		<!--初始化rem大小-->
+		<script src="js/rem_init.js"></script>
+		<style type="text/css">
+			/*----------------------头部样式----------------------------*/
+			
+			.margin-top-10 {
+				margin-top: 10%;
+			}
+			/*能量信息*/
+			
+			.mine-left {
+				float: left;
+				width: 50%;
+				height: 1.18rem;
+				border-right: 1px solid #dcdcdc;
+			}
+			
+			.mine-right {
+				float: right;
+				text-align: center;
+				width: 50%;
+				margin-top: -0.25rem;
+				/*border: 1px solid black;*/
+			}
+			
+			.mine-seg-power {
+				height: 1.18rem;
+				width: 100%;
+				background: white;
+			}
+			
+			.mine-head {
+				display: inline-block;
+				height: 1rem;
+				width: 1rem;
+				background: black;
+				border-radius: 100%;
+				margin-top: 0.1rem;
+				margin-left: 1rem;
+			}
+			
+			.mine-name {
+				display: inline-block;
+				position: absolute;
+				font-size: 0.3rem;
+				margin-top: 0.4rem;
+				margin-left: 0.1rem;
+			}
+			
+			.mine-power-number {
+				color: #77d6c3;
+			}
+			/*竞猜分类*/
+			
+			.nav-pager-guess {
+				position: relative;
+				width: 100%;
+				background: white;
+				margin-top: 0.10rem;
+				border-top: 1px solid gainsboro;
+				z-index: 9;
+			}
+			/*人气值*/
+			
+			.person-power {
+				position: relative;
+				top: -65px;
+				left: 5rem;
+				width: 86px;
+				height: 66px;
+				background-image: url(img/jincai_shock/person-power.png);
+				background-size: cover;
+				z-index: 10;
+				color: white;
+				font-size: 16px;
+				text-align: center;
+			}
+			
+			.power-value {
+				padding-top: 6px;
+				font-size: 21px;
+				font-weight: bold;
+			}
+			/*摇一摇*/
+			
+			.shock-show {
+				position: relative;
+				background: white;
+				text-align: center;
+				margin-top: -40px;
+				z-index: 60;
+			}
+			
+			.shock-show-logo {
+				width: 150px;
+				height: 150px;
+				z-index: 10;
+			}
+			/*按钮激活*/
+			
+			.but-active {
+				background: #77d6c3;
+				color: white;
+				border: 1px solid white !important;
+				margin-bottom: 10px;
+			}
+			
+			.but-out-active {
+				background: white;
+				color: #77d6c3;
+				border: 1px solid #77d6c3;
+				margin-bottom: 10px;
+			}
+			
+			.shock-show-logo {
+				animation-name: shock;
+				animation-duration: 1s;
+				animation-timing-function: ease-in-out;
+				animation-iteration-count: 6;
+				animation-play-state: paused;
+			}
+			
+			@keyframes shock {
+				0% {
+					transform: rotateZ(0deg);
+				}
+				25% {
+					transform: rotateZ(30deg);
+				}
+				50% {
+					transform: rotateZ(0deg);
+				}
+				75% {
+					transform: rotateZ(-30deg);
+				}
+				100% {
+					transform: rotateZ(0deg);
+				}
+			}
+			/*弹窗*/
+			
+			.alert-bg {
+				position: fixed;
+				width: 100%;
+				top: 0;
+				left: 0;
+				background: rgba(1, 1, 1, 0.4);
+				z-index: 30;
+				text-align: center;
+				font-size: 16px;
+			}
+			
+			.alert-border {
+				position: relative;
+				width: 250px;
+				height: 250px;
+				background: white;
+				border-radius: 10px;
+				margin: 40% auto;
+			}
+			
+			.input-number-mine {
+				border: none;
+				border: 1px solid gainsboro;
+				width: 100px !important;
+				height: 28px !important;
+				margin-left: 4px;
+				border-radius: 5px;
+			}
+			
+			.alertTitle {
+				padding-top: 15px;
+				padding-bottom: 8px;
+			}
+			
+			.alert-man {
+				width: 90%;
+				margin: 0 auto;
+				border-bottom: 1px solid gainsboro;
+			}
+			
+			.alert-input {
+				margin-top: 30px;
+			}
+			
+			.button-no {
+				width: 50%;
+				border: none;
+				border-bottom-left-radius: 10px;
+				border-top: 1px solid gainsboro;
+				border-right: 1px solid gainsboro;
+			}
+			
+			.button-yes {
+				width: 50%;
+				border: none;
+				border-bottom-right-radius: 10px;
+				border-top: 1px solid gainsboro;
+				color: #77d6c3;
+			}
+			
+			.alert-button {
+				position: absolute;
+				width: 100%;
+				bottom: 0;
+			}
+			
+			#ranking {
+				visibility: hidden;
+			}
+			
+			#moods {
+				visibility: hidden;
+			}
+		</style>
+	</head>
+
+	<body>
+		<!--头部搜索跟轮播-->
+		<div class="top-main">
+
+			<!--图片轮播-->
+			<div id="slider" class="mui-slider slider-main">
+
+				<div class="mui-slider-group mui-slider-loop">
+					<!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
+					<div class="mui-slider-item mui-slider-item-duplicate">
+						<a href="#">
+							<img src="img/index/全1.png">
+						</a>
+					</div>
+					<!-- 第一张 -->
+					<div class="mui-slider-item">
+						<a href="#">
+							<img src="img/index/全1.png">
+						</a>
+					</div>
+					<!-- 第二张 -->
+					<div class="mui-slider-item">
+						<a href="#">
+							<img src="img/index/全1.png">
+						</a>
+					</div>
+					<!-- 第三张 -->
+					<div class="mui-slider-item">
+						<a href="#">
+							<img src="img/index/全1.png">
+						</a>
+					</div>
+					<!-- 第四张 -->
+					<div class="mui-slider-item">
+						<a href="#">
+							<img src="img/index/全1.png">
+						</a>
+					</div>
+					<!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
+					<div class="mui-slider-item mui-slider-item-duplicate">
+						<a href="#">
+							<img src="img/index/全1.png">
+						</a>
+					</div>
+				</div>
+				<div class="mui-slider-indicator">
+					<div class="mui-indicator mui-active"></div>
+					<div class="mui-indicator"></div>
+					<div class="mui-indicator"></div>
+					<div class="mui-indicator"></div>
+				</div>
+
+			</div>
+		</div>
+		<div class="mui-content">
+			<!--中部内容-->
+			<!--我的能量值-->
+			<div class="mine-seg-power">
+				<div class="mine-left">
+					<img src="img/index/全1.png" class="mine-head">
+					<div class="mine-name">我的昵称</div>
+				</div>
+				<div class="mine-right">
+					<div class="margin-top-10">
+						<h3 class="mine-power-number">34937</h3>
+						<h5>我的能量值</h5></div>
+				</div>
+			</div>
+			<!--竞猜模块-->
+			<!--人气值-->
+			<div class="nav-pager-guess">
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell mui-media">
+						<a href="javascript:;">
+							<img class="mui-media-object mui-pull-left" src="img/person_logo/全2.png">
+							<div class="mui-media-body">
+								张三丰
+								<h6 class="mui-inline">&nbsp;&nbsp;(梦之队)</h6>
+								<p>外地男子青年A组</p>
+							</div>
+						</a>
+						
+					</li>
+				</ul>
+				<!--人气值-->
+					<div class="person-power">
+						<div class="power-value">71370</div>
+						<div>人气值</div>
+					</div>
+			</div>
+			<div class="shock-show">
+				<img class="shock-show-logo" src="img/jincai_shock/shock.png" alt="" />
+				<p>摇一摇，为车队加人气，为自己储备能量~</p>
+				<div><button type="button" id="ranking-btn" class="mui-btn mui-col-xs-6 but-active">进入名次竞猜</button></div>
+				<button type="button" id="moods-btn" class="mui-btn mui-col-xs-6 but-out-active">进入人气竞猜</button>
+			</div>
+
+		</div>
+
+		<!--弹出窗-->
+		<div class="alert-bg" id="ranking">
+			<div class="alert-border">
+				<div class="alertTitle">名次竞猜下注</div>
+				<div class="alert-man">
+					<p>张三丰梦之队（外地青年男子A组)</p>
+				</div>
+				<div class="alert-input">
+					<label>投注名次</label>
+					<input type="number" class="input-number-mine" placeholder="">
+				</div>
+				<p>*比赛结束前30分钟不可下注</p>
+				<div class="alert-button">
+					<button class="button-no hid-btn">取消</button><button class="button-yes hid-btn">确定</button>
+				</div>
+			</div>
+		</div>
+		<div class="alert-bg" id="moods">
+			<div class="alert-border">
+				<div class="alertTitle">人气竞猜下注</div>
+				<div class="alert-man">
+					<p>张三丰梦之队（外地青年男子A组)</p>
+				</div>
+				<div class="alert-input">
+					<label>投注名次</label>
+					<input type="number" class="input-number-mine" placeholder="">
+				</div>
+				<p>*比赛结束前30分钟不可下注</p>
+				<div class="alert-button">
+					<button class="button-no  hid-btn">取消</button><button class="button-yes  hid-btn">确定</button>
+				</div>
+			</div>
+		</div>
+
+	</body>
+
+</html>
+<script src="js/jquery-3.1.1.min.js"></script>
+<script>
+	//	摇一摇
+	(function appShock() {
+		//	摇一摇代码
+		//运动事件监听
+		if(window.DeviceMotionEvent) {
+			window.addEventListener('devicemotion', deviceMotionHandler, false);
+		}
+
+		//获取加速度信息
+		//通过监听上一步获取到的x, y, z 值在一定时间范围内的变化率，进行设备是否有进行晃动的判断。
+		//而为了防止正常移动的误判，需要给该变化率设置一个合适的临界值。
+		var SHAKE_THRESHOLD = 15000;
+		var SHAKE_THRESHOLD_L = 5000;
+		var last_update = 0;
+		var x, y, z, last_x = 0,
+			last_y = 0,
+			last_z = 0;
+
+		function deviceMotionHandler(eventData) {
+			var acceleration = eventData.accelerationIncludingGravity;
+			var curTime = new Date().getTime();
+			if((curTime - last_update) > 10) {
+				var diffTime = curTime - last_update;
+				last_update = curTime;
+				x = acceleration.x;
+				y = acceleration.y;
+				z = acceleration.z;
+				var speed = Math.abs(x + y + z - last_x - last_y - last_z) / diffTime * 10000;
+				if(speed > SHAKE_THRESHOLD) {
+					alert("你中奖啦！");
+					$('.shock-show-logo').css('animation-play-state', 'paused'); // Do something
+				}
+				if(speed > SHAKE_THRESHOLD_L) {
+					//              alert("你中奖啦！");
+					$('.shock-show-logo').css('animation-play-state', 'running'); // Do something
+
+				}
+				last_x = x;
+				last_y = y;
+				last_z = z;
+			}
+		}
+	})();
+
+	//弹窗按钮
+	$(function() {
+		//改变div的高度
+		$(".alert-bg").height($(window).height());
+		//改变div的宽度
+		$(".alert-bg").width($(window).width());
+	});
+
+	$("#ranking-btn").click(function() {
+
+		$('#ranking').css('visibility', 'visible');
+
+	});
+
+	$("#moods-btn").click(function() {
+
+		$('#moods').css('visibility', 'visible');
+
+	});
+
+	$('.hid-btn').click(function() {
+
+		$('#ranking').css('visibility', 'hidden');
+		$('#moods').css('visibility', 'hidden');
+
+	})
+</script>

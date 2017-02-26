@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title></title>
+    <script src="js/mui.min.js"></script>
+    <link href="css/mui.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="css/iconfont.css"/>
+    <script type="text/javascript" charset="utf-8">
+      	mui.init();
+      	
+    </script>
+	<!--初始化rem大小-->
+	<script src="js/rem_init.js"></script>
+    <style type="text/css">
+    	
+    	/*----------------------头部样式----------------------------*/
+    	
+    	
+    	/*公共*/
+    	.margin-right-10{
+    		margin-right:10%;
+    	}
+    	.margin-top-10{
+    		margin-top:10% ;
+    	}
+    	
+    	/*能量信息*/
+    	.mine-left{
+    		float: left;
+    		width: 50%;
+    		height: 1.18rem;
+    		border-right: 1px solid #dcdcdc;
+    	}
+    	.mine-right{
+    		float: right;
+    		text-align: center;
+    		width: 50%;
+    		margin-top: -0.25rem;
+    		/*border: 1px solid black;*/
+    	}
+    	
+    	.mine-seg-power{
+    		height: 1.18rem;
+    		width: 100%;
+    		background: white;
+    	}
+    	.mine-head{
+    		display: inline-block;
+    		height:1rem;
+    		width: 1rem;
+    		background: black;
+    		border-radius: 100%;
+    		margin-top: 0.1rem;
+    		margin-left:1rem ;
+    	}
+    	.mine-name{
+    		display: inline-block;
+    		position: absolute;
+    		font-size: 0.3rem;
+    		margin-top: 0.4rem;
+    		margin-left: 0.1rem;
+    	}
+    	.mine-power-number{
+    		color: #77d6c3;
+    	}
+    	
+    	/*竞猜分类*/
+    	.nav-pager-guess{
+    		position: relative;
+    		height: 0.84rem;
+    		width: 100%;
+    		background: white;
+    		margin-top: 0.10rem;
+    		border-top: 1px solid gainsboro;
+    		z-index: 9;
+    	}
+    	.border-page-guess{
+    		width:3.4rem ;
+    		height: 0.5rem;
+    		margin:0.17rem auto;
+    		/*background: wheat;*/
+    		text-align: center;
+    		font-size: 0.3rem;
+    		border-radius:0.1rem ;
+    		border: 1px solid #2ec7ac;
+    		line-height: 0.45rem;
+    	}
+    	.page-guess-span{
+    		display: inline-block;
+    		width: 50%;
+    		height: 100%;
+    		
+    	}
+    	
+    	.page-guess-left{
+    		border-right: 1px solid white;
+    		background: #2ec7ac;
+    		color: white;
+    		border-bottom-left-radius: 0.1rem;
+    		border-top-left-radius: 0.1rem;
+    	}
+    	.page-guess-right{
+    		border-right: 1px solid white;
+    		color: #2ec7ac;
+    		border-bottom-right-radius: 0.1rem;
+    		border-top-right-radius: 0.1rem;
+    	}
+    	
+    	/*竞猜列表*/
+    	.list-guess-tab{
+    		width: 100%;
+    		background: white;
+    		text-align: center;
+    	}
+    	.person-img img{
+    		width: 0.65rem;
+    	}
+    	.yOrN img{
+    		width: 0.65rem;
+    	}
+    	.list-guess-tab tr:nth-child(odd){
+    		
+    		font-size: 0.5rem;
+    		color: #2ec7ac;
+		
+    	}
+    	.list-guess-tab td{
+    		padding: 0.1rem;
+    	}
+    	.list-guess-tab tr:nth-child(even){
+    		
+    		font-size: 0.3rem;
+    		color: #252626;
+    		border-bottom: 1px solid gainsboro;
+		
+    	}
+    	.bar-bottom-show{
+    		
+    		width: 100%;
+    		height: 80px;
+    		
+    	}
+    	
+    	
+    	
+    	
+    	
+    	
+    </style>
+</head>
+<body>
+	<!--头部搜索跟轮播-->
+	<div class="top-main">
+
+		<!--图片轮播-->
+		<div id="slider" class="mui-slider slider-main" >
+		  
+		  <div class="mui-slider-group mui-slider-loop">
+		    <!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
+		    <div class="mui-slider-item mui-slider-item-duplicate">
+		      <a href="#">
+		        <img src="img/index/全1.png">
+		      </a>
+		    </div>
+		    <!-- 第一张 -->
+		    <div class="mui-slider-item">
+		      <a href="#">
+		        <img src="img/index/全1.png">
+		      </a>
+		    </div>
+		    <!-- 第二张 -->
+		    <div class="mui-slider-item">
+		      <a href="#">
+		        <img src="img/index/全1.png">
+		      </a>
+		    </div>
+		    <!-- 第三张 -->
+		    <div class="mui-slider-item">
+		      <a href="#">
+		        <img src="img/index/全1.png">
+		      </a>
+		    </div>
+		    <!-- 第四张 -->
+		    <div class="mui-slider-item">
+		      <a href="#">
+		        <img src="img/index/全1.png">
+		      </a>
+		    </div>
+		    <!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
+		    <div class="mui-slider-item mui-slider-item-duplicate">
+		      <a href="#">
+		        <img src="img/index/全1.png">
+		      </a>
+		    </div>
+		  </div>
+		  <div class="mui-slider-indicator">
+		    <div class="mui-indicator mui-active"></div>
+		    <div class="mui-indicator"></div>
+		    <div class="mui-indicator"></div>
+		    <div class="mui-indicator"></div>
+		  </div>
+		
+		</div>
+	</div>
+	<div class="mui-content">
+		<!--中部内容-->
+		<!--我的能量值-->
+		<div class="mine-seg-power">			
+			<div class="mine-left">
+				<img src="img/index/全1.png" class="mine-head"><div class="mine-name">我的昵称</div>
+			</div>
+			<div class="mine-right">
+				<div class="margin-top-10">
+				<h3 class="mine-power-number">34937</h3>
+				<h5>我的能量值</h5></div>
+			</div>
+		</div>
+		<!--竞猜模块-->
+		<div class="nav-pager-guess">
+			
+			<div class="border-page-guess">
+				<span class="page-guess-span page-guess-left">名次竞猜</span><span class="page-guess-span page-guess-right">人气竞猜</span>
+			</div>
+			
+			<table class="list-guess-tab">
+				<tr>
+					<td class="person-img"><img src="img/person_logo/全2.png"  alt="" /></td>
+					<td>3</td>
+					<td>7</td>
+					<td class="yOrN"><img src="img/del.png" alt="" /></td>
+				</tr>
+				<tr>
+					<td>张三丰梦之队</td>
+					<td>外地青年男子A组</td>
+					<td>竞猜名次</td>
+					<td>失败</td>
+				</tr>
+				<tr>
+					<td class="person-img"><img src="img/person_logo/全2.png"  alt="" /></td>
+					<td>3</td>
+					<td>7</td>
+					<td class="yOrN"><img src="img/del.png" alt="" /></td>
+				</tr>
+				<tr>
+					<td>张三丰梦之队</td>
+					<td>外地青年男子A组</td>
+					<td>竞猜名次</td>
+					<td>失败</td>
+				</tr>
+				<tr>
+					<td class="person-img"><img src="img/person_logo/全2.png"  alt="" /></td>
+					<td>3</td>
+					<td>7</td>
+					<td class="yOrN"><img src="img/del.png" alt="" /></td>
+				</tr>
+				<tr>
+					<td>张三丰梦之队</td>
+					<td>外地青年男子A组</td>
+					<td>竞猜名次</td>
+					<td>失败</td>
+				</tr>
+				<tr>
+					<td class="person-img"><img src="img/person_logo/全2.png"  alt="" /></td>
+					<td>3</td>
+					<td>7</td>
+					<td class="yOrN"><img src="img/del.png" alt="" /></td>
+				</tr>
+				<tr>
+					<td>张三丰梦之队</td>
+					<td>外地青年男子A组</td>
+					<td>竞猜名次</td>
+					<td>失败</td>
+				</tr>
+			</table>
+			<!--撑高度-->
+			<div class=" bar-bottom-show"></div>
+		</div>
+			
+	</div>
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<!--底部tableBar-->
+	<nav class="mui-bar mui-bar-tab">
+	    <a class="mui-tab-item mui-active">
+	        <span class="mui-icon iconfont icon-bicycleicf"></span>
+	        <span class="mui-tab-label">车队选择</span>
+	    </a>
+	    <a class="mui-tab-item">
+	        <span class="mui-icon iconfont icon-jingcai"></span>
+	        <span class="mui-tab-label">名次竞猜</span>
+	    </a>
+	    <a class="mui-tab-item">
+	        <span class="mui-icon iconfont icon-liwu"></span>
+	        <span class="mui-tab-label">我的奖励</span>
+	    </a>
+	</nav>
+
+</body>
+</html>

@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title></title>
+    <script src="js/mui.min.js"></script>
+    <link href="css/mui.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="css/iconfont.css"/>
+    <script type="text/javascript" charset="utf-8">
+      	mui.init();
+      	
+    </script>
+    <style type="text/css">
+    	
+    	/*----------------------头部样式----------------------------*/
+    	.top-main{
+    		width: 100%;
+    		position: relative;
+    	}
+    	.search-main-border{
+    		position: absolute;
+    		width: 100%;
+    		height: 33px;
+    		/*background: bisque;*/
+    	}
+    	.search-main{
+    		position: absolute;
+    		margin-left: 10%;
+    		width: 80%;
+    		height: 33px;
+    		background: whitesmoke;
+    		z-index: 99;
+    		opacity: 0.3;
+    		border-radius: 5px;
+    	}
+    	.mui-search-input{
+    		opacity: 0.9;
+    	}
+    	
+    	/*人气值*/
+    	.hot-person{
+    		margin-left: 1%;
+    		display: inline-block;
+    		width: 30%;
+    		background: #e5e5e5;
+    		border: 1px solid #bfbfbf;
+    		height: 14px;
+    		border-radius: 10px;
+    		position: relative;
+    	}
+    	.hot-person-value{
+    		position: absolute;
+    		/*margin-left: 10px;*/
+    		left: 0;
+    		top: 0;
+    		display: inline-block;
+    		width: 40%;
+    		background: #2ec7ac;
+    		height: 13px;
+    		border-radius: 10px;
+    		z-index: 1;
+    	}
+    	
+    	.list-time{
+    		display: inline-block;
+    		border-left: 1px dotted darkgrey;
+    		padding-left: 16px;
+    		margin-left: 10px;
+    		font-size: 13px;
+    	}
+    	.margin-right-10{
+    		margin-right:10%;
+    	}
+    	.margin-top-10{
+    		margin-top:-20px ;
+    	}
+    	/*陈高度*/
+    	
+    	.bar-bottom-show{
+    		
+    		width: 100%;
+    		height: 80px;
+    		
+    	}
+    	
+    	
+    </style>
+</head>
+<body>
+	
+	
+	<!--头部搜索跟轮播-->
+	<div class="top-main">
+		<!--搜索框-->
+		<div class="search-main-border">
+			<div class="search-main">
+			<div class="mui-input-row mui-search">
+		    	<input type="search" class="mui-input-clear mui-search-input" placeholder="">
+	  		</div>
+		</div>
+		</div>
+		
+		<!--图片轮播-->
+		<div id="slider" class="mui-slider slider-main" >
+		  
+		  <div class="mui-slider-group mui-slider-loop">
+		    <!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
+		    <div class="mui-slider-item mui-slider-item-duplicate">
+		      <a href="#">
+		        <img src="img/index/全1.png">
+		      </a>
+		    </div>
+		    <!-- 第一张 -->
+		    <div class="mui-slider-item">
+		      <a href="#">
+		        <img src="img/index/全1.png">
+		      </a>
+		    </div>
+		    <!-- 第二张 -->
+		    <div class="mui-slider-item">
+		      <a href="#">
+		        <img src="img/index/全1.png">
+		      </a>
+		    </div>
+		    <!-- 第三张 -->
+		    <div class="mui-slider-item">
+		      <a href="#">
+		        <img src="img/index/全1.png">
+		      </a>
+		    </div>
+		    <!-- 第四张 -->
+		    <div class="mui-slider-item">
+		      <a href="#">
+		        <img src="img/index/全1.png">
+		      </a>
+		    </div>
+		    <!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
+		    <div class="mui-slider-item mui-slider-item-duplicate">
+		      <a href="#">
+		        <img src="img/index/全1.png">
+		      </a>
+		    </div>
+		  </div>
+		  <div class="mui-slider-indicator">
+		    <div class="mui-indicator mui-active"></div>
+		    <div class="mui-indicator"></div>
+		    <div class="mui-indicator"></div>
+		    <div class="mui-indicator"></div>
+		  </div>
+		
+		</div>
+	</div>
+	
+	
+	<!--中部内容-->
+	<ul class="mui-table-view">
+	        <li class="mui-table-view-cell">
+	        	<a class="mui-navigate-right">
+	            <h4 class="mui-inline">全部赛事小组</h4>
+	            <h5 class="mui-inline mui-pull-right margin-right-10">选择赛事组</h5>
+	        	</a>
+	        </li>
+	       
+	</ul>
+	
+	<ul class="mui-table-view">
+    <li class="mui-table-view-cell mui-media">
+        <a href="javascript:;">
+            <img class="mui-media-object mui-pull-left" src="img/person_logo/全2.png">
+            <div class="mui-media-body">
+                	张三丰<h6 class="mui-inline">&nbsp;&nbsp;(梦之队)</h6>
+                	<p class="mui-ellipsis margin-top-10">人气值：2341
+                		<span class="hot-person"><span class="hot-person-value"></span></span>
+                		<span class="list-time">
+	            		02:31:44 <br /><span>上届成绩</span>
+	            		</span>
+                	</p>
+             
+            </div>
+        </a>
+    </li>
+    <li class="mui-table-view-cell mui-media">
+        <a href="javascript:;">
+            <img class="mui-media-object mui-pull-left" src="img/person_logo/全2.png">
+            <div class="mui-media-body">
+                	张三丰<h6 class="mui-inline">&nbsp;&nbsp;(梦之队)</h6>
+                	<p class="mui-ellipsis margin-top-10">人气值：2341
+                		<span class="hot-person"><span class="hot-person-value"></span></span>
+                		<span class="list-time">
+	            		02:31:44 <br /><span>上届成绩</span>
+	            		</span>
+                	</p>
+             
+            </div>
+        </a>
+    </li>
+    <li class="mui-table-view-cell mui-media">
+        <a href="javascript:;">
+            <img class="mui-media-object mui-pull-left" src="img/person_logo/全2.png">
+            <div class="mui-media-body">
+                	张三丰<h6 class="mui-inline">&nbsp;&nbsp;(梦之队)</h6>
+                	<p class="mui-ellipsis margin-top-10">人气值：2341
+                		<span class="hot-person"><span class="hot-person-value"></span></span>
+                		<span class="list-time">
+	            		02:31:44 <br /><span>上届成绩</span>
+	            		</span>
+                	</p>
+             
+            </div>
+        </a>
+    </li>
+    <li class="mui-table-view-cell mui-media">
+        <a href="javascript:;">
+            <img class="mui-media-object mui-pull-left" src="img/person_logo/全2.png">
+            <div class="mui-media-body">
+                	张三丰<h6 class="mui-inline">&nbsp;&nbsp;(梦之队)</h6>
+                	<p class="mui-ellipsis margin-top-10">人气值：2341
+                		<span class="hot-person"><span class="hot-person-value"></span></span>
+                		<span class="list-time">
+	            		02:31:44 <br /><span>上届成绩</span>
+	            		</span>
+                	</p>
+             
+            </div>
+        </a>
+    </li>
+    <li class="mui-table-view-cell mui-media">
+        <a href="javascript:;">
+            <img class="mui-media-object mui-pull-left" src="img/person_logo/全2.png">
+            <div class="mui-media-body">
+                	张三丰<h6 class="mui-inline">&nbsp;&nbsp;(梦之队)</h6>
+                	<p class="mui-ellipsis margin-top-10">人气值：2341
+                		<span class="hot-person"><span class="hot-person-value"></span></span>
+                		<span class="list-time">
+	            		02:31:44 <br /><span>上届成绩</span>
+	            		</span>
+                	</p>
+             
+            </div>
+        </a>
+    </li>
+    <li class="mui-table-view-cell mui-media">
+        <a href="javascript:;">
+            <img class="mui-media-object mui-pull-left" src="img/person_logo/全2.png">
+            <div class="mui-media-body">
+                	张三丰<h6 class="mui-inline">&nbsp;&nbsp;(梦之队)</h6>
+                	<p class="mui-ellipsis margin-top-10">人气值：2341
+                		<span class="hot-person"><span class="hot-person-value"></span></span>
+                		<span class="list-time">
+	            		02:31:44 <br /><span>上届成绩</span>
+	            		</span>
+                	</p>
+             
+            </div>
+        </a>
+    </li>
+    <li class="mui-table-view-cell mui-media">
+        <a href="javascript:;">
+            <img class="mui-media-object mui-pull-left" src="img/person_logo/全2.png">
+            <div class="mui-media-body">
+                	张三丰<h6 class="mui-inline">&nbsp;&nbsp;(梦之队)</h6>
+                	<p class="mui-ellipsis margin-top-10">人气值：2341
+                		<span class="hot-person"><span class="hot-person-value"></span></span>
+                		<span class="list-time">
+	            		02:31:44 <br /><span>上届成绩</span>
+	            		</span>
+                	</p>
+             
+            </div>
+        </a>
+    </li>
+    <li class="mui-table-view-cell mui-media">
+        <a href="javascript:;">
+            <img class="mui-media-object mui-pull-left" src="img/person_logo/全2.png">
+            <div class="mui-media-body">
+                	张三丰<h6 class="mui-inline">&nbsp;&nbsp;(梦之队)</h6>
+                	<p class="mui-ellipsis margin-top-10">人气值：2341
+                		<span class="hot-person"><span class="hot-person-value"></span></span>
+                		<span class="list-time">
+	            		02:31:44 <br /><span>上届成绩</span>
+	            		</span>
+                	</p>
+             
+            </div>
+        </a>
+    </li>
+    <li class="mui-table-view-cell mui-media">
+        <a href="javascript:;">
+            <img class="mui-media-object mui-pull-left" src="img/person_logo/全2.png">
+            <div class="mui-media-body">
+                	张三丰<h6 class="mui-inline">&nbsp;&nbsp;(梦之队)</h6>
+                	<p class="mui-ellipsis margin-top-10">人气值：2341
+                		<span class="hot-person"><span class="hot-person-value"></span></span>
+                		<span class="list-time">
+	            		02:31:44 <br /><span>上届成绩</span>
+	            		</span>
+                	</p>
+             
+            </div>
+        </a>
+    </li>
+    <li class="mui-table-view-cell mui-media">
+        <a href="javascript:;">
+            <img class="mui-media-object mui-pull-left" src="img/person_logo/全2.png">
+            <div class="mui-media-body">
+                	张三丰<h6 class="mui-inline">&nbsp;&nbsp;(梦之队)</h6>
+                	<p class="mui-ellipsis margin-top-10">人气值：2341
+                		<span class="hot-person"><span class="hot-person-value"></span></span>
+                		<span class="list-time">
+	            		02:31:44 <br /><span>上届成绩</span>
+	            		</span>
+                	</p>
+             
+            </div>
+        </a>
+    </li>
+</ul>
+	
+	
+	
+	
+	
+	<!--撑高度-->
+			<div class=" bar-bottom-show"></div>
+	
+	<!--底部tableBar-->
+	<nav class="mui-bar mui-bar-tab">
+	    <a class="mui-tab-item mui-active">
+	        <span class="mui-icon iconfont icon-bicycleicf"></span>
+	        <span class="mui-tab-label">车队选择</span>
+	    </a>
+	    <a class="mui-tab-item">
+	        <span class="mui-icon iconfont icon-jingcai"></span>
+	        <span class="mui-tab-label">名次竞猜</span>
+	    </a>
+	    <a class="mui-tab-item">
+	        <span class="mui-icon iconfont icon-liwu"></span>
+	        <span class="mui-tab-label">我的奖励</span>
+	    </a>
+	</nav>
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title></title>
+    <script src="js/mui.min.js"></script>
+    <link href="css/mui.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="css/iconfont.css"/>
+    <script type="text/javascript" charset="utf-8">
+      	mui.init();
+      	
+    </script>
+    <style type="text/css">
+
+    	/*奖励*/
+    	
+    	.input-list{
+    		background: white;
+    	}
+    	.input-list{
+    		border: 1px solid ghostwhite;
+    	}
+    	.hr-input{
+    		width: 80%;
+    		border-top:1px solid ghostwhite;
+    	}
+    	.but-gift{
+    		background: #2AC845;
+    		font-size: 18px;
+    		color: white;
+    	}
+    	.but-border{
+    		margin-top:20px ;
+    		text-align: center;
+    	}
+    	p{
+    		color: gray;
+    		font-weight: bold;
+    		margin-top:10px ;
+    		margin-left: 10px;
+    	}
+    	.number-page{
+    		color: black;
+    		font-size: 16px;
+    		color: gray;
+    		display: inline-block;
+    		padding-left: 20px;
+    	}
+    	
+    	.number-page>span{
+    		color: #2AC845;
+    		font-size: 30px;
+    	}
+    	.gift-name{
+    		color: #242424;
+    		font-weight: bold;
+    	}
+    	.true-time{
+    		margin-top: -8px;
+    	}
+    	.ad-img-border{
+    		width: 100%;
+    		text-align: center;
+    		background: white;
+    		padding-top: 6px;
+    	}
+    	.ad-img{
+    		width: 300px;
+    		height: 100px;
+    	}
+    	.bar-bottom-show{
+    		width: 100%;
+    		height: 30px;
+    	}
+    </style>
+</head>
+<body>
+	
+	<p>请输入个人信息领取奖励</p>
+	<div class="input-list">
+		<div class="mui-input-row">
+		    <label>姓名</label>
+		    <input type="text" placeholder="请输入姓名">
+		</div>
+		<hr class="hr-input" />
+		<div class="mui-input-row">
+		    <label>手机号</label>
+		    <input type="text" placeholder="请输入电话号码">
+		</div>
+	</div>
+	
+	<!--确定按钮-->
+	<div class="but-border">
+	
+	<button type="button" class="mui-col-xs-8 but-gift">确定</button>
+	</div>
+	
+	<p>我的奖励</p>
+	
+	<ul class="mui-table-view">
+	    <li class="mui-table-view-cell mui-media">
+	        <a href="javascript:;">
+	            <img class="mui-media-object mui-pull-left" src="img/gift/luo1.png">
+	            <div class="mui-media-body">
+	                	<h5 class="mui-inline gift-name">罗浮山温泉XXX酒店温泉票</h5>
+	                	<p class="number-page"><span>1</span>张</p>
+	                	<h6 class="true-time">有效期：2017年12月1日前有效</h6>
+	            </div>
+	        </a>
+	    </li>
+	    <li class="mui-table-view-cell mui-media">
+	        <a href="javascript:;">
+	            <img class="mui-media-object mui-pull-left" src="img/gift/luo1.png">
+	            <div class="mui-media-body">
+	                	<h5 class="mui-inline gift-name">罗浮山温泉XXX酒店温泉票</h5>
+	                	<p class="number-page"><span>1</span>张</p>
+	                	<h6 class="true-time">有效期：2017年12月1日前有效</h6>
+	            </div>
+	        </a>
+	    </li>
+	</ul>
+	
+	<p>其他活动</p>
+	
+	<div class="ad-img-border">
+		<img class="ad-img" src="img/ad/ad_03.png" alt="" />
+	</div>
+	
+	
+	<!--撑高度-->
+			<div class=" bar-bottom-show"></div>
+	
+	
+	
+	<!--撑高度-->
+			<div class=" bar-bottom-show"></div>
+	
+	<!--底部tableBar-->
+	<nav class="mui-bar mui-bar-tab">
+	    <a class="mui-tab-item mui-active">
+	        <span class="mui-icon iconfont icon-bicycleicf"></span>
+	        <span class="mui-tab-label">车队选择</span>
+	    </a>
+	    <a class="mui-tab-item">
+	        <span class="mui-icon iconfont icon-jingcai"></span>
+	        <span class="mui-tab-label">名次竞猜</span>
+	    </a>
+	    <a class="mui-tab-item">
+	        <span class="mui-icon iconfont icon-liwu"></span>
+	        <span class="mui-tab-label">我的奖励</span>
+	    </a>
+	</nav>
+</body>
+</html>
